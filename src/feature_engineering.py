@@ -23,7 +23,7 @@ def remove_low_variance(df, threshold=0.0):
     variances = df[sensor_cols].var()
     selected = variances[variances > threshold].index.tolist()
 
-    # 🔥 önemli: ID ve target kaybolmasın
+    #
     keep_cols = selected + ["unit_id", "cycle", "RUL"]
 
     return df[keep_cols]
